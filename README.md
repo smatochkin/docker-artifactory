@@ -6,11 +6,7 @@ Link: [mattgruter/artifactory](https://registry.hub.docker.com/u/mattgruter/arti
 
 
 ## Volumes
-Artifactories `data`, `logs` and `backup` directories are exported as volumes:
-
-    /artifactory/data
-    /artifactory/logs
-    /artifactory/backup
+Artifactories `data`, `logs` and `backup` directories are located within exported volume `/artifactory`
 
 ## Ports
 The web server is accessible through port `8080`.

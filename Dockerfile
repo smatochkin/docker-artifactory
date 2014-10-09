@@ -20,7 +20,7 @@ RUN echo '<html><head><meta http-equiv="refresh" content="0;URL=artifactory/"></
 
 # Fetch and install Artifactory OSS war archive.
 RUN \
-  wget --quiet http://dl.bintray.com/jfrog/artifactory/artifactory-3.3.0.zip -O artifactory.zip && \
+  wget --quiet http://dl.bintray.com/jfrog/artifactory/artifactory-3.4.0.zip -O artifactory.zip && \
   unzip -j artifactory.zip "artifactory-*/webapps/artifactory.war" -d /tomcat/webapps && \
   rm artifactory.zip
 
@@ -37,8 +37,6 @@ RUN mkdir -p /artifactory
 ENV ARTIFACTORY_HOME /artifactory
 
 # Expose Artifactories data, log and backup directory.
-VOLUME /artifactory/data
-VOLUME /artifactory/logs
-VOLUME /artifactory/backup
+VOLUME /artifactory
 
 WORKDIR /artifactory
